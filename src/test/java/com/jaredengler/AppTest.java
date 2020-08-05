@@ -1,38 +1,32 @@
 package com.jaredengler;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
-/**
- * Unit test for simple App.
- */
-public class AppTest 
-    extends TestCase
-{
-    /**
-     * Create the test case
-     *
-     * @param testName name of the test case
-     */
-    public AppTest( String testName )
-    {
-        super( testName );
+import org.junit.Test;
+
+public class AppTest {
+
+    ParensBalancer parensBalancer = new ParensBalancer();
+
+    @Test
+    public void testEmptyString() {
+        assertTrue(parensBalancer.isBalanced(""));
     }
 
-    /**
-     * @return the suite of tests being tested
-     */
-    public static Test suite()
-    {
-        return new TestSuite( AppTest.class );
+    @Test
+    public void testOneParen() {
+        assertFalse(parensBalancer.isBalanced("("));
     }
 
-    /**
-     * Rigourous Test :-)
-     */
-    public void testApp()
-    {
-        assertTrue( true );
+    @Test
+    public void testTwoParen() {
+        assertTrue(parensBalancer.isBalanced("()"));
     }
+
+    @Test
+    public void testThreeParen() {
+        assertFalse(parensBalancer.isBalanced("())"));
+    }
+
 }
