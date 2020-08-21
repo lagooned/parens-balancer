@@ -17,6 +17,7 @@ public class AppTest {
     @Test
     public void testOneParen() {
         assertFalse(parensBalancer.isBalanced("("));
+        assertFalse(parensBalancer.isBalanced(")"));
     }
 
     @Test
