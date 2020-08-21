@@ -30,6 +30,9 @@ public class AppTest {
     @Test
     public void testThreeParen() {
         assertFalse(parensBalancer.isBalanced("())"));
+        assertFalse(parensBalancer.isBalanced("((("));
+        assertFalse(parensBalancer.isBalanced("(()"));
+        assertFalse(parensBalancer.isBalanced(")))"));
     }
 
 }
